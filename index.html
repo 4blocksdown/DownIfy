@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DownIfy - Spotify MP3 Downloader</title>
-  
-  <!-- ✅ Favicon -->
+
   <link rel="icon" type="image/png" href="logo.png" />
 
-  <!-- ✅ Fonts & Styles -->
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -33,11 +31,7 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 6px;
-    }
-    .footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #888;
+      cursor: pointer;
     }
     .github-link {
       margin-top: 2rem;
@@ -46,35 +40,150 @@
     .github-link img {
       width: 32px;
       vertical-align: middle;
+      filter: invert(100%);
+    }
+    .legal-link {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #1DB954;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .modal, .confirm-modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      color: white;
+      max-width: 800px;
+      width: 90%;
+      height: 80vh;
+      overflow-y: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 20px black;
+    }
+
+    .modal h2, .confirm-modal h2 {
+      color: #1DB954;
+    }
+
+    .modal-close, .confirm-close {
+      margin-top: 20px;
+      background-color: #1DB954;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .confirm-buttons {
+      margin-top: 20px;
+    }
+
+    .confirm-buttons button {
+      margin: 0 10px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-yes {
+      background-color: #1DB954;
+      color: white;
+    }
+
+    .btn-no {
+      background-color: #aa2e2e;
+      color: white;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- ✅ Logo on Page -->
   <img src="logo.png" alt="DownIfy Logo" class="logo" />
 
   <h1>DownIfy</h1>
   <p>Spotify ➜ MP3 Downloader</p>
 
-  <!-- ✅ Download Button -->
-  <a href="YOUR_INSTALLER_LINK_HERE" class="download-btn">Download Now</a>
+  <a class="download-btn" onclick="showConfirm()">Download Now</a>
 
-  <!-- ✅ GitHub Link -->
   <div class="github-link">
     <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank">
       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" title="View on GitHub" />
     </a>
   </div>
 
-  <!-- ✅ Legal Agreement -->
-  <div class="footer">
-    <hr style="margin: 2rem auto; width: 60%; border-color: #333;">
-    <p><strong>Legal Disclaimer</strong></p>
-    <p>DownIfy is an open-source tool created for educational purposes only.  
-    It is not affiliated with, endorsed by, or supported by Spotify or any related entities.<br />
-    Use this software responsibly and in accordance with your local copyright laws.</p>
+  <div class="legal-link" onclick="showModal()">View Legal Agreement</div>
+
+  <div id="legalModal" class="modal">
+    <h2>📄 DownIfy – Legal Agreement</h2>
+    <p><em>Last updated: September 13th 2025</em></p>
+    <p>
+      <strong>1. Terms of Service</strong><br>
+      1.1 DownIfy is designed to help users download or convert royalty-free, openly licensed, or user-owned media only.<br>
+      1.2 You are solely responsible for your actions when using the Service.<br>
+      1.3 We do not claim ownership over any content you process using the Service.<br>
+      1.4 The Service is provided “as is” without warranties of any kind.<br>
+      1.5 We may suspend or terminate your access for violations.<br>
+      1.6 These Terms are governed by the laws of [Your Jurisdiction].
+    </p>
+    <p>
+      <strong>2. Privacy Policy</strong><br>
+      2.1 We collect basic technical data only.<br>
+      2.2 We do not require or sell personal info.<br>
+      2.3 We may share minimal data if legally required.<br>
+      2.4 Reasonable steps are taken to secure data.
+    </p>
+    <p>
+      <strong>3. Copyright Notice & DMCA Policy</strong><br>
+      3.1 Users are responsible for copyright compliance.<br>
+      3.2 No use of DownIfy to bypass DRM or download unauthorized media.<br>
+      3.3 DMCA takedowns: email 📧 <a href="mailto:fourpixelsbiz@gmail.com">fourpixelsbiz@gmail.com</a><br>
+      3.4 Counter-notification: submit with your info and statement.<br>
+      3.5 Repeat infringers may be banned.
+    </p>
+    <button class="modal-close" onclick="closeModal()">Close</button>
   </div>
+
+  <div id="confirmModal" class="confirm-modal">
+    <h2>⚠️ Accept Legal Agreement</h2>
+    <p>To proceed with the download, you must accept our Legal Agreement.</p>
+    <div class="confirm-buttons">
+      <button class="btn-yes" onclick="proceedDownload()">Yes, I Accept</button>
+      <button class="btn-no" onclick="closeConfirm()">No</button>
+    </div>
+  </div>
+
+  <script>
+    function showModal() {
+      document.getElementById("legalModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("legalModal").style.display = "none";
+    }
+
+    function showConfirm() {
+      document.getElementById("confirmModal").style.display = "block";
+    }
+
+    function closeConfirm() {
+      document.getElementById("confirmModal").style.display = "none";
+    }
+
+    function proceedDownload() {
+      closeConfirm();
+      window.location.href = "YOUR_INSTALLER_LINK_HERE";
+    }
+  </script>
 
 </body>
 </html>
