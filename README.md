@@ -10,7 +10,7 @@ ________                      .___  _____
                      by DownIfy
 ```
 
-![DownIfy Logo](logo.png)
+![DownIfy Logo](https://github.com/4blocksdown/DownIfy/blob/website/icon.png)
 
 **DownIfy** is a desktop tool that allows users to download Spotify tracks or playlists as MP3 files using publicly available sources on YouTube. It embeds metadata, album covers, and organizes everything neatly.
 
