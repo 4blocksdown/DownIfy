@@ -116,15 +116,15 @@
   <a class="download-btn" onclick="showConfirm()">Download Now</a>
 
   <div class="github-link">
-    <a href="https://github.com/4blocksdown/DownIfy/" target="_blank">
+    <a href="https://github.com/4blocksdown/DownIfy/" target="_blank" rel="noopener noreferrer">
       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" title="View on GitHub" />
     </a>
   </div>
 
   <div class="legal-link" onclick="showModal()">View Legal Agreement</div>
 
-  <div id="legalModal" class="modal">
-    <h2>📄 DownIfy – Legal Agreement</h2>
+  <div id="legalModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <h2 id="legal-title">📄 DownIfy – Legal Agreement</h2>
     <p><em>Last updated: September 13th 2025</em></p>
     <p>
       <strong>1. Terms of Service</strong><br>
@@ -153,8 +153,8 @@
     <button class="modal-close" onclick="closeModal()">Close</button>
   </div>
 
-  <div id="confirmModal" class="confirm-modal">
-    <h2>⚠️ Accept Legal Agreement</h2>
+  <div id="confirmModal" class="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+    <h2 id="confirm-title">⚠️ Accept Legal Agreement</h2>
     <p>To proceed with the download, you must accept our Legal Agreement.</p>
     <div class="confirm-buttons">
       <button class="btn-yes" onclick="proceedDownload()">Yes, I Accept</button>
@@ -181,10 +181,10 @@
 
     function proceedDownload() {
       closeConfirm();
-      window.location.href = "YOUR_INSTALLER_LINK_HERE";
+      // Change the URL below to your actual installer or download link
+      window.location.href = "https://yourdomain.com/path/to/installer.exe";
     }
   </script>
 
 </body>
 </html>
-
