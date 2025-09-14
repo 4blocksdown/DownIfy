@@ -8,7 +8,7 @@ ________                      .___  _____
         \/                  \/           \/      
                🎶 Spotify ➜ MP3 Downloader
                      by DownIfy
-# 🎵 DownIfy – Spotify ➜ MP3 Downloader
+```
 
 ![DownIfy Logo](logo.png)
 
