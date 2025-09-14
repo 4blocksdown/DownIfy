@@ -1,101 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DownIfy – Install</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DownIfy - Spotify MP3 Downloader</title>
+  
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- ✅ Fonts & Styles -->
   <style>
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #111;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      text-align: center;
       padding: 2rem;
     }
-
-    .container {
-      max-width: 600px;
-      text-align: center;
+    img.logo {
+      width: 100px;
+      margin-bottom: 1rem;
     }
-
     h1 {
-      color: #1db954;
-      font-size: 2.5rem;
+      color: #1DB954;
     }
-
-    p {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-bottom: 2rem;
-    }
-
-    .download-btn {
-      background-color: #1db954;
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
+    a.download-btn {
       display: inline-block;
-      font-weight: 600;
-      transition: background 0.3s ease;
+      margin-top: 1rem;
+      padding: 12px 24px;
+      background-color: #1DB954;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
     }
-
-    .download-btn:hover {
-      background-color: #17a444;
-    }
-
-    .instructions {
-      margin-top: 3rem;
-      text-align: left;
-      background: #222;
-      padding: 1.5rem;
-      border-radius: 10px;
-      color: #aaa;
-      font-size: 0.95rem;
-    }
-
-    code {
-      background: #333;
-      padding: 2px 5px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-
-    footer {
+    .footer {
       margin-top: 4rem;
-      font-size: 0.8rem;
-      color: #666;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .github-link {
+      margin-top: 2rem;
+      display: inline-block;
+    }
+    .github-link img {
+      width: 32px;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>DownIfy</h1>
-    <p>Spotify → MP3 Downloader Tool for Windows</p>
 
-    <!-- Replace href with your actual download link -->
-    <a class="download-btn" href="https://example.com/downify_installer.exe" download>⬇ Download DownIfy</a>
+  <!-- ✅ Logo on Page -->
+  <img src="logo.png" alt="DownIfy Logo" class="logo" />
 
-    <div class="instructions">
-      <h3>Installation Instructions:</h3>
-      <ul>
-        <li>💾 Click the download button above.</li>
-        <li>🖱️ Run <code>downify_installer.exe</code> after it finishes downloading.</li>
-        <li>📁 The app will prompt you for a folder to save your MP3 files.</li>
-        <li>🎵 Paste a Spotify track or playlist link when prompted, and enjoy your music!</li>
-      </ul>
-    </div>
+  <h1>DownIfy</h1>
+  <p>Spotify ➜ MP3 Downloader</p>
 
-    <footer>
-      &copy; 2025 DownIfy. Not affiliated with Spotify. Built for educational purposes.
-    </footer>
+  <!-- ✅ Download Button -->
+  <a href="YOUR_INSTALLER_LINK_HERE" class="download-btn">Download Now</a>
+
+  <!-- ✅ GitHub Link -->
+  <div class="github-link">
+    <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" title="View on GitHub" />
+    </a>
   </div>
+
+  <!-- ✅ Legal Agreement -->
+  <div class="footer">
+    <hr style="margin: 2rem auto; width: 60%; border-color: #333;">
+    <p><strong>Legal Disclaimer</strong></p>
+    <p>DownIfy is an open-source tool created for educational purposes only.  
+    It is not affiliated with, endorsed by, or supported by Spotify or any related entities.<br />
+    Use this software responsibly and in accordance with your local copyright laws.</p>
+  </div>
+
 </body>
 </html>
